@@ -1,0 +1,44 @@
+@import 'tailwindcss';
+/* 
+  sm	40rem (640px)	@media (width >= 40rem) { ... }
+  md	48rem (768px)	@media (width >= 48rem) { ... }
+  lg	64rem (1024px)	@media (width >= 64rem) { ... }
+  xl	80rem (1280px)	@media (width >= 80rem) { ... }
+  2xl	96rem (1536px)	@media (width >= 96rem) { ... }
+
+  max-sm	@media (width < 40rem)
+  max-md	@media (width < 48rem)
+  max-lg	@media (width < 64rem)
+  max-xl	@media (width < 80rem)
+  max-2xl	@media (width < 96rem) 
+*/
+
+@theme static {
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-xxl: 1536px;
+  --color-green: #0fde8c;
+}
+/* 
+@layer base {
+  h1 {
+    @apply text-blue-set text-4xl font-medium;
+  }
+  h2 {
+    @apply text-blue-set text-3xl font-medium;
+  }
+  h3 {
+    @apply text-blue-set text-2xl font-medium;
+  }
+  h4 {
+    @apply text-blue-set text-xl font-medium;
+  }
+  h5 {
+    @apply text-blue-set text-lg font-medium;
+  }
+  h6 {
+    @apply text-blue-set text-base font-medium;
+  }
+} */
