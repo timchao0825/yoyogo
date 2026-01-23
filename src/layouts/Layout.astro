@@ -1,6 +1,7 @@
 ---
 import '../styles/tailwind.css';
 import '../styles/global.scss';
+import Header from './Header.astro';
 ---
 
 <!doctype html>
@@ -11,12 +12,26 @@ import '../styles/global.scss';
       name="viewport"
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, viewport-fit=cover"
     />
+    <meta name="generator" content="Yoyogo 悠遊購" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
-    <meta name="generator" content="Yoyogo 悠遊購" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://code.jquery.com/jquery-4.0.0.min.js"
+      integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+      crossorigin="anonymous"></script>
+
     <title>Yoyogo 悠遊購</title>
   </head>
   <body>
+    <Header />
+
     <slot />
   </body>
 </html>
@@ -27,11 +42,9 @@ import '../styles/global.scss';
     padding: 0;
     margin: 0;
     font-size: 16px;
-    border: 2px solid red;
-    // font-family: 'Noto Sans TC', sans-serif;
-    // color: var(--color-blue-set);
-    // background-color: var(--color-white-set);
-    // letter-spacing: 0.1rem;
+    font-family: 'Noto Sans', sans-serif;
+    color: var(--color-black);
+    background-color: var(--color-white);
   }
 
   // set mobile/pad can not swipe to left / right
@@ -39,3 +52,7 @@ import '../styles/global.scss';
     overflow: hidden scroll;
   }
 </style>
+
+<!-- layout function -->
+<script src="../scripts/global.js"></script>
+<!-- end layout function -->

@@ -1,0 +1,70 @@
+---
+import { Image } from 'astro:assets';
+import '../styles/layout.scss';
+import LogoImg from '../assets/images/logo.webp';
+---
+
+<header
+  class="bg-extra-light-gray sticky top-0 z-1000 shadow-md"
+  role="navigation"
+>
+  <div
+    class="relative mx-auto flex max-w-187.5 items-center justify-center py-3.5 lg:justify-between"
+  >
+    <a href="/yoyogo/">
+      <Image src={LogoImg} alt="Yoyogo Logo" width="157" height="48" />
+    </a>
+
+    <!-- desktop nav -->
+    <nav class="hidden lg:block">
+      <ul class="flex items-center gap-8 text-lg font-medium">
+        <li>
+          <!-- 當前頁面加入text-primary變色 -->
+          <a class="text-primary" href="/yoyogo/" target="_blank"> 抽獎登錄 </a>
+        </li>
+        <li>
+          <a class="link-hover" href="#" target="_blank"> 活動辦法 </a>
+        </li>
+        <li>
+          <a class="link-hover" href="#" target="_blank"> 個資蒐集同意條款 </a>
+        </li>
+        <li>
+          <a class="link-hover" href="#" target="_blank"> 購買 eSIM </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- mobile nav -->
+    <nav
+      class="absolute top-[50%] left-8 block -translate-y-1/2 transform lg:hidden"
+    >
+      <div class="hamburger cursor-pointer" id="hamburger">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- mobile content -->
+<nav class="mobile-content text-block bg-extra-light-gray block lg:hidden">
+  <div class="container flex h-full flex-col justify-between">
+    <ul class="mx-6 mt-10 flex flex-col gap-6">
+      <li>
+        <!-- 當前頁面加入text-primary變色 -->
+        <a class="text-primary" href="/yoyogo/" target="_blank"> 抽獎登錄 </a>
+      </li>
+      <li>
+        <a class="link-hover" href="#" target="_blank"> 活動辦法 </a>
+      </li>
+      <li>
+        <a class="link-hover" href="#" target="_blank"> 個資蒐集同意條款 </a>
+      </li>
+      <li>
+        <a class="link-hover" href="#" target="_blank"> 購買 eSIM </a>
+      </li>
+    </ul>
+
+    <div class="mx-6 mb-14">social media icon</div>
+  </div>
+</nav>

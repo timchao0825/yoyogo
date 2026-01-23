@@ -19,7 +19,16 @@
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
   --breakpoint-xxl: 1536px;
-  --color-green: #0fde8c;
+  --color-primary: #ea562a;
+  --color-dark-gray: #484848;
+  --color-medium-gray: #7b7b7b;
+  --color-light-gray: #dadada;
+  --color-extra-light-gray: #f9f7f6;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-success: #2fb509;
+  --color-error: #ce2d2d;
+  /* mask color 000000 0.6 */
 }
 /* 
 @layer base {
