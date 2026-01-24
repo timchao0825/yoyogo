@@ -7,7 +7,7 @@
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: var(--color-black);
+    background-color: var(--color-dark-gray);
     transition: all 0.4s ease;
     content: '';
     transform: scaleX(0);
@@ -143,7 +143,7 @@
           margin-bottom: 16px;
           font-size: 16px;
           font-weight: 400;
-          color: var(--color-black);
+          color: var(--color-dark-gray);
         }
 
         &::before {

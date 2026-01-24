@@ -5,7 +5,7 @@ header {
       margin: 6px auto;
       width: 24px;
       height: 2px;
-      background-color: var(--color-black);
+      background-color: var(--color-dark-gray);
       border-radius: 8px;
       transition: all 0.3s ease-in-out;
     }
@@ -27,7 +27,7 @@ header {
 
   // desktop nav active effect
   nav.hidden {
-    ul li {
+    ul li a {
       &:active {
         background-color: var(--color-light-gray);
       }
@@ -68,7 +68,7 @@ $menu-height: 73px;
       }
     }
 
-    &:active {
+    a:active {
       background-color: var(--color-light-gray);
     }
   }

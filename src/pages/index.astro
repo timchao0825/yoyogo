@@ -5,6 +5,7 @@ import { Image } from 'astro:assets';
 ---
 
 <Layout>
+  <!-- index block -->
   <section>
     <Image class="mb-10 w-full lg:mb-30" src={BannerImg} alt="Yoyogo Banner" />
     <div class="mx-auto w-full max-w-145 px-4 lg:px-0">
@@ -14,13 +15,13 @@ import { Image } from 'astro:assets';
       <form id="orderForm" class="mb-10 lg:mb-30">
         <!-- 姓名 -->
         <div class="form-group mb-4">
-          <label for="name" class="mb-2 block"> 姓名 </label>
+          <label for="name" class="mb-2 block font-medium"> 姓名 </label>
           <input
             type="text"
             id="name"
             name="name"
-            class="w-full rounded-[10px] border border-gray-300 px-4 py-2 transition outline-none focus:border-transparent focus:ring-2 focus:ring-blue-400"
-            placeholder="請輸入真實姓名"
+            class="border-medium-gray w-full rounded-[10px] border px-3 py-2 transition outline-none focus:border-transparent focus:ring-2 focus:ring-blue-400"
+            placeholder="請輸入姓名"
           />
           <div class="error-message flex items-center" data-error="name">
             <span
@@ -34,13 +35,13 @@ import { Image } from 'astro:assets';
 
         <!-- 手機號碼 -->
         <div class="form-group mb-4">
-          <label for="phone" class="mb-2 block"> 手機號碼 </label>
+          <label for="phone" class="mb-2 block font-medium"> 手機號碼 </label>
           <input
             type="text"
             id="phone"
             name="phone"
-            class="w-full rounded-[10px] border border-gray-300 px-4 py-2 transition outline-none focus:border-transparent focus:ring-2 focus:ring-blue-400"
-            placeholder="請輸入 10 位手機號碼"
+            class="border-medium-gray w-full rounded-[10px] border px-3 py-2 transition outline-none focus:border-transparent focus:ring-2 focus:ring-blue-400"
+            placeholder="請輸入手機號碼"
             maxlength="10"
           />
           <div class="error-message flex items-center" data-error="phone">
@@ -55,13 +56,13 @@ import { Image } from 'astro:assets';
 
         <!-- 訂單編號 -->
         <div class="form-group mb-4">
-          <label for="orderId" class="mb-2 block"> 訂單編號 </label>
+          <label for="orderId" class="mb-2 block font-medium"> 訂單編號 </label>
           <input
             type="text"
             id="orderId"
             name="orderId"
-            class="w-full rounded-[10px] border border-gray-300 px-4 py-2 transition outline-none focus:border-transparent focus:ring-2 focus:ring-blue-400"
-            placeholder="請輸入訂單編號"
+            class="border-medium-gray w-full rounded-[10px] border px-3 py-2 transition outline-none focus:border-transparent focus:ring-2 focus:ring-blue-400"
+            placeholder="請輸入蝦皮訂單編號"
           />
           <div class="relative">
             <div class="error-message flex items-center" data-error="orderId">
@@ -88,13 +89,13 @@ import { Image } from 'astro:assets';
 
         <!-- Email -->
         <div class="form-group mb-4">
-          <label for="email" class="mb-2 block"> Email </label>
+          <label for="email" class="mb-2 block font-medium"> Email </label>
           <input
             type="email"
             id="email"
             name="email"
-            class="w-full rounded-[10px] border border-gray-300 px-4 py-2 transition outline-none focus:border-transparent focus:ring-2 focus:ring-blue-400"
-            placeholder="example@email.com"
+            class="border-medium-gray w-full rounded-[10px] border px-3 py-2 transition outline-none focus:border-transparent focus:ring-2 focus:ring-blue-400"
+            placeholder="請輸入正確 Email 格式內容"
           />
           <div class="error-message flex items-center" data-error="email">
             <span
@@ -107,14 +108,14 @@ import { Image } from 'astro:assets';
         </div>
 
         <!-- 地址 -->
-        <div class="form-group mb-4">
-          <label for="address" class="mb-2 block"> 地址 </label>
+        <div class="form-group mb-6">
+          <label for="address" class="mb-2 block font-medium"> 地址 </label>
           <input
             type="text"
             id="address"
             name="address"
-            class="w-full rounded-[10px] border border-gray-300 px-4 py-2 transition outline-none focus:border-transparent focus:ring-2 focus:ring-blue-400"
-            placeholder="請輸入地址"
+            class="border-medium-gray w-full rounded-[10px] border px-3 py-2 transition outline-none focus:border-transparent focus:ring-2 focus:ring-blue-400"
+            placeholder="請填寫收件地址"
           />
           <div class="error-message flex items-center" data-error="address">
             <span
@@ -128,20 +129,24 @@ import { Image } from 'astro:assets';
 
         <!-- 同意條款 -->
         <div
-          class="form-group mb-4 flex flex-col items-center justify-center lg:mb-10"
+          class="form-group mb-6 flex flex-col items-center justify-center lg:mb-10"
         >
           <label class="flex cursor-pointer items-start">
             <input
               type="checkbox"
               id="agreement"
               name="agreement"
-              class="custom-checkbox mt-0.5 h-4 w-4 rounded-[10px] border-gray-300 text-blue-600 focus:ring-2 focus:ring-blue-400"
+              class="custom-checkbox border-medium-gray mt-0.5 h-4 w-4 rounded-[10px] text-blue-600 focus:ring-2 focus:ring-blue-400"
             />
             <span class="ml-2">
               我已了解並同意
-              <a href="#" class="text-primary underline"> 活動辦法 </a>
+              <a href="/yoyogo/detail" class="text-primary underline">
+                活動辦法
+              </a>
               和
-              <a href="#" class="text-primary underline"> 個資蒐集同意條款 </a>
+              <a href="/yoyogo/privacy" class="text-primary underline">
+                個資蒐集同意條款
+              </a>
             </span>
           </label>
           <div class="error-message flex items-center" data-error="agreement">
@@ -169,14 +174,13 @@ import { Image } from 'astro:assets';
     </div>
   </section>
   <!-- 彈窗 -->
-  <!-- 彈窗遮罩 -->
   <div
     id="successModal"
     class="modal-overlay bg-opacity-50 fixed inset-0 z-100 hidden items-center justify-center"
   >
     <!-- 彈窗內容 -->
     <div
-      class="modal-content mx-4 w-full max-w-md rounded-2xl bg-white p-8 text-center shadow-2xl"
+      class="modal-content mx-4 w-full max-w-md rounded-2xl bg-white px-6 py-8 text-center shadow-2xl"
     >
       <!-- 標題 -->
       <p class="text-primary mb-5 text-xl font-bold">登錄成功！</p>
@@ -437,4 +441,5 @@ import { Image } from 'astro:assets';
       });
     });
   </script>
+  <!-- end index block -->
 </Layout>
