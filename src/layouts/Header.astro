@@ -2,10 +2,14 @@
 import { Image } from 'astro:assets';
 import '../styles/layout.scss';
 import LogoImg from '../assets/images/logo.webp';
+import FbIcon from '../assets/images/fb-icon.svg';
+import IgIcon from '../assets/images/ig-icon.svg';
+import LineIcon from '../assets/images/line-icon.svg';
+import YtIcon from '../assets/images/yt-icon.svg';
 ---
 
 <header
-  class="bg-extra-light-gray sticky top-0 z-1000 shadow-md"
+  class="bg-extra-light-gray sticky top-0 z-50 shadow-md"
   role="navigation"
 >
   <div
@@ -17,25 +21,25 @@ import LogoImg from '../assets/images/logo.webp';
 
     <!-- desktop nav -->
     <nav class="hidden lg:block">
-      <ul class="flex items-center gap-8 text-lg font-medium">
-        <li>
+      <ul class="flex items-center gap-5 text-lg font-medium">
+        <li class="p-3">
           <!-- 當前頁面加入text-primary變色 -->
-          <a class="text-primary" href="/yoyogo/" target="_blank"> 抽獎登錄 </a>
+          <a class="text-primary" href="/yoyogo/"> 抽獎登錄 </a>
         </li>
-        <li>
-          <a class="link-hover" href="#" target="_blank"> 活動辦法 </a>
+        <li class="p-3">
+          <a class="link-hover" href="/yoyogo/detail"> 活動辦法 </a>
         </li>
-        <li>
-          <a class="link-hover" href="#" target="_blank"> 個資蒐集同意條款 </a>
+        <li class="p-3">
+          <a class="link-hover" href="/yoyogo/privacy"> 個資蒐集同意條款 </a>
         </li>
-        <li>
+        <li class="p-3">
           <a class="link-hover" href="#" target="_blank"> 購買 eSIM </a>
         </li>
       </ul>
     </nav>
     <!-- mobile nav -->
     <nav
-      class="absolute top-[50%] left-8 block -translate-y-1/2 transform lg:hidden"
+      class="absolute top-[50%] left-8 block -translate-y-1/2 transform px-3 py-2 lg:hidden"
     >
       <div class="hamburger cursor-pointer" id="hamburger">
         <span class="line"></span>
@@ -47,24 +51,39 @@ import LogoImg from '../assets/images/logo.webp';
 </header>
 
 <!-- mobile content -->
-<nav class="mobile-content text-block bg-extra-light-gray block lg:hidden">
+<nav
+  class="mobile-content text-block bg-extra-light-gray fixed block w-full overflow-hidden lg:hidden"
+>
   <div class="container flex h-full flex-col justify-between">
-    <ul class="mx-6 mt-10 flex flex-col gap-6">
-      <li>
+    <ul class="mt-10 flex flex-col">
+      <li class="px-6 py-6">
         <!-- 當前頁面加入text-primary變色 -->
-        <a class="text-primary" href="/yoyogo/" target="_blank"> 抽獎登錄 </a>
+        <a class="text-primary" href="/yoyogo/"> 抽獎登錄 </a>
       </li>
-      <li>
-        <a class="link-hover" href="#" target="_blank"> 活動辦法 </a>
+      <li class="px-6 py-6">
+        <a class="link-hover" href="/yoyogo/detail"> 活動辦法 </a>
       </li>
-      <li>
-        <a class="link-hover" href="#" target="_blank"> 個資蒐集同意條款 </a>
+      <li class="px-6 py-6">
+        <a class="link-hover" href="/yoyogo/privacy"> 個資蒐集同意條款 </a>
       </li>
-      <li>
+      <li class="px-6 py-6">
         <a class="link-hover" href="#" target="_blank"> 購買 eSIM </a>
       </li>
     </ul>
 
-    <div class="mx-6 mb-14">social media icon</div>
+    <div class="social-box mx-6 mb-14 flex items-center justify-center gap-8">
+      <a href="https://www.facebook.com/yoyogo.travel/" target="_blank">
+        <Image src={FbIcon} alt="Facebook Icon" width="44" height="44" />
+      </a>
+      <a href="https://www.instagram.com/yoyogo.travel/" target="_blank">
+        <Image src={IgIcon} alt="Instagram Icon" width="44" height="44" />
+      </a>
+      <a href="https://www.youtube.com/@YOYOGO.Travel" target="_blank">
+        <Image src={YtIcon} alt="YouTube Icon" width="44" height="44" />
+      </a>
+      <a href="https://page.line.me/YOYOGO?openQrModal=true" target="_blank">
+        <Image src={LineIcon} alt="Line Icon" width="44" height="44" />
+      </a>
+    </div>
   </div>
 </nav>

@@ -1,7 +1,440 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import BannerImg from '../assets/images/banner.png';
+import { Image } from 'astro:assets';
 ---
 
 <Layout>
-  <div></div>
+  <section>
+    <Image class="mb-10 w-full lg:mb-30" src={BannerImg} alt="Yoyogo Banner" />
+    <div class="mx-auto w-full max-w-145 px-4 lg:px-0">
+      <h1 class="mb-10 text-center lg:mb-20">YOYOGO 登錄訂單編號抽好禮</h1>
+      <h2 class="mb-6 text-center lg:mb-10">請妥善填寫以下欄位：</h2>
+      <!-- form validation -->
+      <form id="orderForm" class="mb-10 lg:mb-30">
+        <!-- 姓名 -->
+        <div class="form-group mb-4">
+          <label for="name" class="mb-2 block"> 姓名 </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="w-full rounded-[10px] border border-gray-300 px-4 py-2 transition outline-none focus:border-transparent focus:ring-2 focus:ring-blue-400"
+            placeholder="請輸入真實姓名"
+          />
+          <div class="error-message flex items-center" data-error="name">
+            <span
+              class="bg-error mr-2 flex h-5 w-5 items-center justify-center rounded-[100%] text-white"
+            >
+              !
+            </span>
+            <span>請輸入正確姓名格式,勿包含特殊符號或數字</span>
+          </div>
+        </div>
+
+        <!-- 手機號碼 -->
+        <div class="form-group mb-4">
+          <label for="phone" class="mb-2 block"> 手機號碼 </label>
+          <input
+            type="text"
+            id="phone"
+            name="phone"
+            class="w-full rounded-[10px] border border-gray-300 px-4 py-2 transition outline-none focus:border-transparent focus:ring-2 focus:ring-blue-400"
+            placeholder="請輸入 10 位手機號碼"
+            maxlength="10"
+          />
+          <div class="error-message flex items-center" data-error="phone">
+            <span
+              class="bg-error mr-2 flex h-5 w-5 items-center justify-center rounded-[100%] text-white"
+            >
+              !
+            </span>
+            請輸入 10 位半形數字,勿填符號或空格
+          </div>
+        </div>
+
+        <!-- 訂單編號 -->
+        <div class="form-group mb-4">
+          <label for="orderId" class="mb-2 block"> 訂單編號 </label>
+          <input
+            type="text"
+            id="orderId"
+            name="orderId"
+            class="w-full rounded-[10px] border border-gray-300 px-4 py-2 transition outline-none focus:border-transparent focus:ring-2 focus:ring-blue-400"
+            placeholder="請輸入訂單編號"
+          />
+          <div class="relative">
+            <div class="error-message flex items-center" data-error="orderId">
+              <span
+                class="bg-error mr-2 flex h-5 w-5 items-center justify-center rounded-[100%] text-white"
+              >
+                !
+              </span>
+              格式有誤,請輸入半形英數字,勿填符號或空格
+            </div>
+
+            <div
+              class="error-message text-error empty-order-id absolute top-0 left-0 mt-0! flex items-center"
+            >
+              <span
+                class="bg-error mr-2 flex h-5 w-5 items-center justify-center rounded-[100%] text-white"
+              >
+                !
+              </span>
+              此欄位不可留空
+            </div>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group mb-4">
+          <label for="email" class="mb-2 block"> Email </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="w-full rounded-[10px] border border-gray-300 px-4 py-2 transition outline-none focus:border-transparent focus:ring-2 focus:ring-blue-400"
+            placeholder="example@email.com"
+          />
+          <div class="error-message flex items-center" data-error="email">
+            <span
+              class="bg-error mr-2 flex h-5 w-5 items-center justify-center rounded-[100%] text-white"
+            >
+              !
+            </span>
+            Email 格式有誤
+          </div>
+        </div>
+
+        <!-- 地址 -->
+        <div class="form-group mb-4">
+          <label for="address" class="mb-2 block"> 地址 </label>
+          <input
+            type="text"
+            id="address"
+            name="address"
+            class="w-full rounded-[10px] border border-gray-300 px-4 py-2 transition outline-none focus:border-transparent focus:ring-2 focus:ring-blue-400"
+            placeholder="請輸入地址"
+          />
+          <div class="error-message flex items-center" data-error="address">
+            <span
+              class="bg-error mr-2 flex h-5 w-5 items-center justify-center rounded-[100%] text-white"
+            >
+              !
+            </span>
+            請輸入地址
+          </div>
+        </div>
+
+        <!-- 同意條款 -->
+        <div
+          class="form-group mb-4 flex flex-col items-center justify-center lg:mb-10"
+        >
+          <label class="flex cursor-pointer items-start">
+            <input
+              type="checkbox"
+              id="agreement"
+              name="agreement"
+              class="custom-checkbox mt-0.5 h-4 w-4 rounded-[10px] border-gray-300 text-blue-600 focus:ring-2 focus:ring-blue-400"
+            />
+            <span class="ml-2">
+              我已了解並同意
+              <a href="#" class="text-primary underline"> 活動辦法 </a>
+              和
+              <a href="#" class="text-primary underline"> 個資蒐集同意條款 </a>
+            </span>
+          </label>
+          <div class="error-message flex items-center" data-error="agreement">
+            <span
+              class="bg-error mr-2 flex h-5 w-5 items-center justify-center rounded-[100%] text-white"
+            >
+              !
+            </span>
+            請勾選同意條款
+          </div>
+        </div>
+
+        <!-- 送出按鈕 -->
+        <div class="flex gap-4">
+          <button
+            type="submit"
+            id="submitBtn"
+            class="disabled:bg-light-gray bg-primary hover:bg-dark-gray active:bg-medium-gray flex-1 cursor-pointer rounded-[10px] px-6 py-3 font-medium text-white transition disabled:cursor-not-allowed disabled:text-white disabled:active:scale-100"
+            disabled
+          >
+            送出表單
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <!-- 彈窗 -->
+  <!-- 彈窗遮罩 -->
+  <div
+    id="successModal"
+    class="modal-overlay bg-opacity-50 fixed inset-0 z-100 hidden items-center justify-center"
+  >
+    <!-- 彈窗內容 -->
+    <div
+      class="modal-content mx-4 w-full max-w-md rounded-2xl bg-white p-8 text-center shadow-2xl"
+    >
+      <!-- 標題 -->
+      <p class="text-primary mb-5 text-xl font-bold">登錄成功！</p>
+
+      <!-- 描述文字 -->
+      <p class="mb-6 leading-relaxed">
+        感謝您的參與，祝您中大獎！<br />
+        中獎者將另行通知
+      </p>
+
+      <!-- 確認按鈕 -->
+      <button
+        id="closeModalBtn"
+        class="bg-primary hover:bg-dark-gray active:bg-medium-gray mx-auto w-full max-w-[320px] cursor-pointer rounded-[10px] px-6 py-2 text-lg font-medium text-white transition"
+      >
+        確定
+      </button>
+    </div>
+  </div>
+
+  <script is:inline>
+    $(document).ready(function () {
+      // 驗證規則
+      const validators = {
+        name: {
+          validate: function (value) {
+            if (!value || value.trim() === '') return false;
+            // 允許中英文、半形空格及連字號，禁止數字與特殊符號
+            const regex = /^[a-zA-Z\u4e00-\u9fa5\s-]+$/;
+            return regex.test(value);
+          },
+        },
+        phone: {
+          validate: function (value) {
+            if (!value || value.trim() === '') return false;
+            // 僅限數字 0-9，10位數字
+            const regex = /^[0-9]{10}$/;
+            return regex.test(value);
+          },
+        },
+        orderId: {
+          validate: function (value) {
+            if (!value || value.trim() === '') return false;
+            // 僅限 A-Z, 0-9，不分大小寫
+            const regex = /^[a-zA-Z0-9]+$/;
+            return regex.test(value);
+          },
+        },
+        email: {
+          validate: function (value) {
+            if (!value || value.trim() === '') return false;
+            // Email 格式驗證
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(value);
+          },
+        },
+        address: {
+          validate: function (value) {
+            // 禁止純空白字元
+            return value && value.trim() !== '';
+          },
+        },
+        agreement: {
+          validate: function () {
+            // 檢查 checkbox 是否被勾選
+            return $('#agreement').is(':checked');
+          },
+        },
+      };
+
+      // 顯示錯誤訊息
+      function showError(fieldName) {
+        $(`#${fieldName}`).addClass('input-error');
+        $(`[data-error="${fieldName}"]`).addClass('show');
+
+        if (fieldName === 'orderId') {
+          $(`.empty-order-id`).removeClass('show');
+        }
+      }
+
+      // 隱藏錯誤訊息
+      function hideError(fieldName) {
+        $(`#${fieldName}`).removeClass('input-error');
+        $(`[data-error="${fieldName}"]`).removeClass('show');
+        if (fieldName === 'orderId') {
+          $(`.empty-order-id`).removeClass('show');
+        }
+      }
+
+      // 驗證單一欄位
+      function validateField(fieldName) {
+        const value = $(`#${fieldName}`).val();
+        const isValid = validators[fieldName].validate(value);
+
+        if (fieldName === 'orderId') {
+          if (!value || value.trim() === '') {
+            $(`#${fieldName}`).addClass('input-error');
+            $(`.empty-order-id`).addClass('show');
+            return false;
+          }
+        }
+
+        if (isValid) {
+          hideError(fieldName);
+        } else {
+          showError(fieldName);
+        }
+
+        return isValid;
+      }
+
+      // 檢查所有欄位並更新按鈕狀態
+      function updateSubmitButton() {
+        const fields = [
+          'name',
+          'phone',
+          'orderId',
+          'email',
+          'address',
+          'agreement',
+        ];
+        let allValid = true;
+
+        fields.forEach(function (field) {
+          if (field === 'agreement') {
+            if (!validators[field].validate()) {
+              allValid = false;
+            }
+          } else {
+            const value = $(`#${field}`).val();
+            if (!validators[field].validate(value)) {
+              allValid = false;
+            }
+          }
+        });
+
+        // 更新按鈕狀態
+        if (allValid) {
+          $('#submitBtn').prop('disabled', false);
+        } else {
+          $('#submitBtn').prop('disabled', true);
+        }
+      }
+
+      // 即時驗證 - 輸入時
+      $('#name, #phone, #orderId, #email, #address').on('blur', function () {
+        const fieldName = $(this).attr('id');
+        validateField(fieldName);
+        updateSubmitButton();
+      });
+
+      // 輸入時移除錯誤提示並檢查按鈕狀態
+      $('#name, #phone, #orderId, #email, #address').on('input', function () {
+        const fieldName = $(this).attr('id');
+        hideError(fieldName);
+        updateSubmitButton();
+      });
+
+      // Checkbox 改變時檢查狀態
+      $('#agreement').on('change', function () {
+        if ($(this).is(':checked')) {
+          hideError('agreement');
+        } else {
+          showError('agreement');
+        }
+        updateSubmitButton();
+      });
+
+      // 表單送出驗證
+      $('#orderForm').on('submit', function (e) {
+        e.preventDefault();
+
+        let isValid = true;
+        const fields = [
+          'name',
+          'phone',
+          'orderId',
+          'email',
+          'address',
+          'agreement',
+        ];
+
+        // 驗證所有欄位
+        fields.forEach(function (field) {
+          if (!validateField(field)) {
+            isValid = false;
+          }
+        });
+
+        if (isValid) {
+          // 收集表單資料
+          const formData = {
+            name: $('#name').val(),
+            phone: $('#phone').val(),
+            orderId: $('#orderId').val(),
+            email: $('#email').val(),
+            address: $('#address').val(),
+            agreement: $('#agreement').is(':checked'),
+          };
+          // 表單驗證通過後的處理邏輯
+          console.log('表單驗證通過！', formData);
+
+          // 顯示成功彈窗
+          showModal();
+        } else {
+          // 找到第一個錯誤欄位並聚焦
+          const firstErrorField = fields.find((field) => !validateField(field));
+          if (firstErrorField) {
+            if (firstErrorField === 'agreement') {
+              $('#agreement').focus();
+            } else {
+              $(`#${firstErrorField}`).focus();
+            }
+          }
+        }
+      });
+
+      // 頁面載入時初始化按鈕狀態
+      updateSubmitButton();
+
+      // 顯示彈窗
+      function showModal() {
+        $('#successModal').removeClass('hidden').addClass('flex');
+        setTimeout(function () {
+          $('#successModal').addClass('show');
+        }, 10);
+
+        // 禁止背景滾動
+        $('body').css('overflow', 'hidden');
+      }
+
+      // 關閉彈窗
+      function closeModal() {
+        $('#successModal').removeClass('show');
+        setTimeout(function () {
+          $('#successModal').removeClass('flex').addClass('hidden');
+          $('body').css('overflow', 'auto');
+        }, 300);
+      }
+
+      // 點擊確定按鈕關閉
+      $('#closeModalBtn').on('click', function () {
+        closeModal();
+      });
+
+      // 點擊遮罩關閉 (可選)
+      $('#successModal').on('click', function (e) {
+        if (e.target === this) {
+          closeModal();
+        }
+      });
+
+      // ESC 鍵關閉 (可選)
+      $(document).on('keydown', function (e) {
+        if (e.key === 'Escape' && $('#successModal').hasClass('show')) {
+          closeModal();
+        }
+      });
+    });
+  </script>
 </Layout>

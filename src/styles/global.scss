@@ -25,3 +25,146 @@
     }
   }
 }
+
+.error-message {
+  margin-top: 8px;
+  min-height: 24px;
+  color: var(--color-error);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.error-message.show {
+  opacity: 1;
+}
+
+.input-error {
+  border-color: var(--color-error);
+}
+
+/* 自訂綠色 checkbox 樣式 */
+.custom-checkbox {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 2px solid #d1d5db;
+  border-radius: 4px;
+  transition: all 0.2s;
+  appearance: none;
+  cursor: pointer;
+}
+
+.custom-checkbox:hover {
+  border-color: var(--color-success);
+}
+
+.custom-checkbox:checked {
+  background-color: var(--color-success);
+  border-color: var(--color-success);
+}
+
+.custom-checkbox:checked::after {
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  content: '';
+  transform: rotate(45deg);
+}
+
+.custom-checkbox:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgb(16, 185, 129, 0.2);
+}
+
+// 彈窗樣式
+.modal-overlay {
+  background-color: rgb(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.show {
+  opacity: 1;
+}
+
+.modal-content {
+  transform: scale(0.7);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.modal-overlay.show .modal-content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+// 客製化內容頁面
+.content-wrap {
+  article {
+    margin-bottom: 64px;
+
+    @media (width < 64rem) {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      margin-bottom: 16px;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    > p {
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
+
+    ol {
+      padding-left: 0;
+      list-style: none;
+      counter-reset: item;
+
+      li {
+        position: relative;
+        padding-left: 32px;
+        margin-bottom: 10px;
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--color-primary);
+        counter-increment: item;
+
+        p {
+          margin-top: 16px;
+          margin-bottom: 16px;
+          font-size: 16px;
+          font-weight: 400;
+          color: var(--color-black);
+        }
+
+        &::before {
+          position: absolute;
+          top: 4px;
+          left: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 22px;
+          height: 22px;
+          font-size: 16px;
+          font-weight: 500;
+          color: white;
+
+          /* 客製化數字樣式 */
+          background: var(--color-primary);
+          border-radius: 50%;
+          content: counter(item);
+        }
+      }
+    }
+  }
+}

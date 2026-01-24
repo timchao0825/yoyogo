@@ -1,0 +1,32 @@
+---
+import { Image } from 'astro:assets';
+import '../styles/layout.scss';
+import FbIcon from '../assets/images/fb-icon.svg';
+import IgIcon from '../assets/images/ig-icon.svg';
+import LineIcon from '../assets/images/line-icon.svg';
+import YtIcon from '../assets/images/yt-icon.svg';
+---
+
+<footer class="bg-extra-light-gray border-medium-gray border-t">
+  <div
+    class="relative mx-auto flex max-w-187.5 flex-col items-center justify-center gap-6 py-8 lg:flex-row lg:gap-8"
+  >
+    <div class="social-box flex items-center gap-8 lg:gap-5">
+      <a href="https://www.facebook.com/yoyogo.travel/" target="_blank">
+        <Image src={FbIcon} alt="Facebook Icon" width="44" height="44" />
+      </a>
+      <a href="https://www.instagram.com/yoyogo.travel/" target="_blank">
+        <Image src={IgIcon} alt="Instagram Icon" width="44" height="44" />
+      </a>
+      <a href="https://www.youtube.com/@YOYOGO.Travel" target="_blank">
+        <Image src={YtIcon} alt="YouTube Icon" width="44" height="44" />
+      </a>
+      <a href="https://page.line.me/YOYOGO?openQrModal=true" target="_blank">
+        <Image src={LineIcon} alt="Line Icon" width="44" height="44" />
+      </a>
+    </div>
+    <p class="text-medium-gray text-sm">
+      © 2026 YOYOGO 悠遊購-旅遊上網卡專賣店
+    </p>
+  </div>
+</footer>

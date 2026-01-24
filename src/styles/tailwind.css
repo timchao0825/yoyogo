@@ -30,24 +30,21 @@
   --color-error: #ce2d2d;
   /* mask color 000000 0.6 */
 }
-/* 
+
 @layer base {
   h1 {
-    @apply text-blue-set text-4xl font-medium;
+    @apply text-[32px] leading-10 font-bold;
+
+    @media (width < 64rem) {
+      @apply text-[28px] leading-10 font-bold;
+    }
   }
+
   h2 {
-    @apply text-blue-set text-3xl font-medium;
+    @apply text-[20px] leading-5 font-bold;
+
+    @media (width < 64rem) {
+      @apply text-[20px] leading-8 font-bold;
+    }
   }
-  h3 {
-    @apply text-blue-set text-2xl font-medium;
-  }
-  h4 {
-    @apply text-blue-set text-xl font-medium;
-  }
-  h5 {
-    @apply text-blue-set text-lg font-medium;
-  }
-  h6 {
-    @apply text-blue-set text-base font-medium;
-  }
-} */
+}
