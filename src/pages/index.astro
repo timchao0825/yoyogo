@@ -1,13 +1,23 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import BannerImg from '../assets/images/banner.png';
+import BannerMobileImg from '../assets/images/banner-mobile.png';
 import { Image } from 'astro:assets';
 ---
 
 <Layout>
   <!-- index block -->
   <section>
-    <Image class="mb-10 w-full lg:mb-30" src={BannerImg} alt="Yoyogo Banner" />
+    <Image
+      class="mb-10 hidden w-full sm:block lg:mb-30"
+      src={BannerImg}
+      alt="Yoyogo Banner"
+    />
+    <Image
+      class="mb-10 block w-full sm:hidden lg:mb-30"
+      src={BannerMobileImg}
+      alt="Yoyogo Banner Mobile"
+    />
     <div class="mx-auto w-full max-w-145 px-4 lg:px-0">
       <h1 class="mb-10 text-center lg:mb-20">YOYOGO 登錄訂單編號抽好禮</h1>
       <h2 class="mb-6 text-center lg:mb-10">請妥善填寫以下欄位：</h2>
