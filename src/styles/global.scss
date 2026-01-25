@@ -140,11 +140,15 @@
       li {
         position: relative;
         padding-left: 32px;
-        margin-bottom: 10px;
+        margin-bottom: 24px;
         font-size: 18px;
         font-weight: 500;
         color: var(--color-primary);
         counter-increment: item;
+
+        @media (width < 64rem) {
+          margin-bottom: 16px;
+        }
 
         p {
           margin-top: 16px;
