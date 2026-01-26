@@ -191,7 +191,7 @@ import { Image } from 'astro:assets';
       </form>
     </div>
   </section>
-  <!-- 彈窗 -->
+  <!-- 彈窗區塊 -->
   <div
     id="successModal"
     class="modal-overlay bg-opacity-50 fixed inset-0 z-100 hidden items-center justify-center"
@@ -220,6 +220,7 @@ import { Image } from 'astro:assets';
   </div>
 
   <script is:inline>
+    // script: form & model js function
     $(document).ready(function () {
       // 驗證規則
       const validators = {
@@ -458,6 +459,8 @@ import { Image } from 'astro:assets';
         }
       });
     });
+    // script: end form & model js function
   </script>
+
   <!-- end index block -->
 </Layout>
