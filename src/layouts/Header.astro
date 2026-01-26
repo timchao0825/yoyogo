@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import '../styles/layout.scss';
-import LogoImg from '../assets/images/logo.webp';
+import LogoImg from '../assets/images/logo.png';
 import FbIcon from '../assets/images/fb-icon.svg';
 import IgIcon from '../assets/images/ig-icon.svg';
 import LineIcon from '../assets/images/line-icon.svg';
@@ -16,7 +16,13 @@ import YtIcon from '../assets/images/yt-icon.svg';
     class="relative mx-auto flex max-w-187.5 items-center justify-center py-3.5 lg:justify-between"
   >
     <a href="/yoyogo/">
-      <Image src={LogoImg} alt="Yoyogo Logo" width="157" height="48" />
+      <Image
+        class="max-w-39.25"
+        src={LogoImg}
+        alt="Yoyogo Logo"
+        width="157"
+        height="48"
+      />
     </a>
 
     <!-- desktop nav -->

@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout>
   <section>
+    <!-- height full screen -->
     <div
       class="content-wrap mx-auto mt-10 mb-10 w-full max-w-200 px-4 lg:mt-30 lg:mb-30 lg:px-0"
     >
@@ -39,3 +40,12 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 </Layout>
+
+<style lang="scss">
+  .content-wrap {
+    min-height: calc(100vh - 450px);
+    @media (width < 64rem) {
+      min-height: calc(100vh - 320px);
+    }
+  }
+</style>
